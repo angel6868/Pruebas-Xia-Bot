@@ -7,23 +7,13 @@ client.on('qr', (qr) => {
   console.log(qr);
 });
 
-client.on('message', async (message) => {
-  // Verificar si el mensaje contiene un comando para Lisa Chat IA
-const match = message.body.match(/^\.lisa\s+(.*)/);
-  if (match) {
-    const command = match[1];
-
-    switch (command) {
-      case 'hola':
-        await client.sendMessage(message.from, '¡Hola! ¿Cómo estás?');
-        break;
-      case 'adiós':
-        await client.sendMessage(message.from, '¡Adiós! Fue agradable conversar contigo.');
-        break;
-      default:
-        await client.sendMessage(message.from, 'Lo siento, no entiendo el comando. Por favor, usa .lisa [comando] para interactuar conmigo.');
-    }
+client.on('message', (message) => {
+  // Respondiendo a los mensajes de WhatsApp con Lisa Chat IA
+if (message.body === 'Hola') {
+    client.sendMessage(message.from, '¡Hola! ¿Cómo estás?');
+  } else if (message.body === '¿Cómo te llamas?') {
+    client.sendMessage(message.from, 'Me llamo Lisa Chat IA');
   } else {
-    await client.sendMessage(message.from, 'Por favor, usa el comando .lisa [mensaje] para interactuar conmigo.');
+    client.sendMessage(message.from, 'Lo siento, no entiendo tu mensaje. Por favor, envía "Hola" para iniciar la conversación.');
   }
 });
