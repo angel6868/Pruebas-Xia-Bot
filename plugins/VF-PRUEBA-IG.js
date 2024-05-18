@@ -4,7 +4,7 @@ const client = new Anime();
 const handler = async (m, {conn, text, usedPrefix}) => {
   if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN USUARIO PARA BUSCARLO*`);
   try {
-    const anime = await client.searchAnime(text);
+    const profile = await instagram.users.profile();(text);
     const result = anime.data[0];
     const resultes = await translate(`${result.background}`, {to: 'es', autoCorrect: true});
     const resultes2 = await translate(`${result.synopsis}`, {to: 'es', autoCorrect: true});
