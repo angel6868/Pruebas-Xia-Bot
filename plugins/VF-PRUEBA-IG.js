@@ -1,6 +1,6 @@
 import translate from '@vitalets/google-translate-api';
 import {instagram} from 'instagram-web-api';
-const client = new instagram();
+const client = new Instagram();
 const handler = async (m, {conn, text, usedPrefix}) => {
   if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN USUARIO PARA BUSCARLO*`);
   try {
