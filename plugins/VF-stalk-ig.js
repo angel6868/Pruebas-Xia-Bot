@@ -24,6 +24,11 @@ const client = new wa();
   client.on('ready', async () => {
     await client.sendMessage('<PHONE_NUMBER>', message, ['./profile_picture.jpg']);
   });
-}
+};
+
+handler.command = handler.help = ['bing'];
+handler.tags = ['ai'];
+
+export default handler;
 
 getProfileInfo('<USERNAME>');
