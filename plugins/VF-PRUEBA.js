@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 const handler = async (m, {conn, text, usedPrefix, command}) => {
   if (!text) throw `*[❗] Ingresa un texto para buscar, ejemplo: ${usedPrefix + command} @usxr_angelito`;
-  const res = await fetch(global.API('https://api.github.com', '/search/repositories', {
+  const res = await fetch(global.API('instagram-web-api', '/search/usuarios', {
     q: text,
   }));
   const json = await res.json();
