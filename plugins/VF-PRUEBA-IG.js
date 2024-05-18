@@ -1,4 +1,4 @@
-import translate from '@vitalets/google-translate-api';
+import translate from 'instagram-web-api';
 import {instagram} from 'instagram-web-api';
 const client = new Instagram();
 const handler = async (m, {conn, text, usedPrefix}) => {
