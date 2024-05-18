@@ -5,8 +5,8 @@ const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, com
     throw false;
   }
   const pesan = args.join` `;
-  const oi = `*@LUDMI_SHOP_:* ${pesan}`;
-  let teks = `*😎𝐅𝐀𝐂𝐇𝐀𝐒 𝐀𝐂𝐓𝐈𝐕𝐄𝐍𝐒𝐄 𝐎 𝐂𝐔𝐏𝐎*\n\n ${oi}\n\n- ̗̀  😝 𝐅𝐮𝐭𝐮𝐫𝐨𝐬 𝐜𝐮𝐩𝐨𝐬 !\n\n *${participants.length} Participantes*\n\n`;
+  const oi = `*${participants.length} Participantes* ${pesan}`;
+  let teks = `*😎𝐅𝐀𝐂𝐇𝐀𝐒 𝐀𝐂𝐓𝐈𝐕𝐄𝐍𝐒𝐄 𝐎 𝐂𝐔𝐏𝐎*\n\n ${oi}\n\n- ̗̀  😝 𝐅𝐮𝐭𝐮𝐫𝐨𝐬 𝐜𝐮𝐩𝐨𝐬 !\n`;
   for (const mem of participants) {
     teks += `🔮➤ @${mem.id.split('@')[0]}\n`;
   }
