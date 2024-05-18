@@ -1,5 +1,5 @@
 import translate from '@vitalets/google-translate-api';
-import {Anime} from '@shineiichijo/marika';
+import {Anime} from 'instagram-web-api';
 const client = new Anime();
 const handler = async (m, {conn, text, usedPrefix}) => {
   if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN ANIME A BUSCAR*`);
