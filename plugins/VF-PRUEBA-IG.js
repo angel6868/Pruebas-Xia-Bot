@@ -4,10 +4,14 @@ const client = new Anime();
 const handler = async (m, {conn, text, usedPrefix}) => {
   if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN USUARIO PARA BUSCARLO*`);
   try {
-    const profile = await instagram.users.profile(text);
-    const result = anime.data[0];
-    const resultes = await translate(`${result.background}`, {to: 'es', autoCorrect: true});
-    const resultes2 = await translate(`${result.synopsis}`, {to: 'es', autoCorrect: true});
+
+  // Obtener información del perfil
+const profile = await instagram.users.profile();
+
+  // Descargar la foto de perfil
+const profilePicture = await instagram.users.profilePicture();
+  fs.writeFileSync('./profile_picture.jpg', profilePicture.data);
+
     const message = `Usuario: ${profile.username}\nNombre completo: ${profile.full_name}\nBiografía: ${profile.biography}\nNúmero de seguidores: ${profile.counts.followed_by}\nNúmero de publicaciones: ${profile.counts.media}\nNúmero de usuarios seguidos: ${profile.counts.follows}`;
     conn.sendFile(m.chat, result.images.jpg.image_url, 'error.jpg', AnimeInfo, m);
   } catch {
