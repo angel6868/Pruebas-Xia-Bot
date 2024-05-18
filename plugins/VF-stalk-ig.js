@@ -27,7 +27,7 @@ const client = new wa();
 getProfileInfo('<USERNAME>');
 };
 
-handler.command = handler.help = ['stalkig'];
-handler.tags = ['stalkig'];
+handler.command = handler.help = ['sv'];
+handler.tags = ['ka'];
 
 export default handler;
