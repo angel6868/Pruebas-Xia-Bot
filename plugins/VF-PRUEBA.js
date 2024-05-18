@@ -4,9 +4,10 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
   const res = await fetch(global.API('instagram-web-api', '/search/usuarios', {
     q: text,
   }));
-  const json = await res.json();
-  if (res.status !== 200) throw json;
-  //const imagen = await conn.getFile(json.items[0].owner.avatar_url).data
+  const profilePicture = await instagram.users.profilePicture();
+  fs.writeFileSync('./profile_picture.jpg', profilePicture.data);
+
+
   const str = json.items.map((repo, index) => {
   return `Usuario: ${profile.username}\nNombre completo: ${profile.full_name}\nBiografía: ${profile.biography}\nNúmero de seguidores: ${profile.counts.followed_by}\nNúmero de publicaciones: ${profile.counts.media}\nNúmero de usuarios seguidos: ${profile.counts.follows
 `.trim()}));
