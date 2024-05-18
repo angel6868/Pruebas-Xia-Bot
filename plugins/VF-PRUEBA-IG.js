@@ -2,7 +2,7 @@ import translate from '@vitalets/google-translate-api';
 import {Anime} from 'instagram-web-api';
 const client = new Anime();
 const handler = async (m, {conn, text, usedPrefix}) => {
-  if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN ANIME A BUSCAR*`);
+  if (!text) return m.reply(`*[❗𝐈𝐍𝐅𝐎❗] INGRESE EL NOMBRE DE ALGUN USUARIO PARA BUSCARLO*`);
   try {
     const anime = await client.searchAnime(text);
     const result = anime.data[0];
