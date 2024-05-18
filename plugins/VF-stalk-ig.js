@@ -26,8 +26,8 @@ const client = new wa();
   });
 };
 
-handler.command = handler.help = ['bing'];
-handler.tags = ['ai'];
+handler.command = handler.help = ['stalkig'];
+handler.tags = ['stalkig'];
 
 export default handler;
 
