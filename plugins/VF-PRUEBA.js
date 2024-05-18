@@ -8,7 +8,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
   fs.writeFileSync('./profile_picture.jpg', profilePicture.data);
 
 
-  const str = json.items.map((repo, index) => {
+const profile = await instagram.users.profile(); => {
   return `Usuario: ${profile.username}\nNombre completo: ${profile.full_name}\nBiografía: ${profile.biography}\nNúmero de seguidores: ${profile.counts.followed_by}\nNúmero de publicaciones: ${profile.counts.media}\nNúmero de usuarios seguidos: ${profile.counts.follows
 `.trim()}));
   conn.sendMessage(m.chat, {text: str.trim()}, {quoted: m})
