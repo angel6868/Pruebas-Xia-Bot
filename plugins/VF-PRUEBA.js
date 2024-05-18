@@ -10,7 +10,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
 
 const profile = await instagram.users.profile(); => {
     const message = `Usuario: ${profile.username}\nNombre completo: ${profile.full_name}\nBiografía: ${profile.biography}\nNúmero de seguidores: ${profile.counts.followed_by}\nNúmero de publicaciones: ${profile.counts.media}\nNúmero de usuarios seguidos: ${profile.counts.follows
-`.trim()}));
+`.trim()});
 };
 handler.help = ['cuentas'];
 handler.tags = ['buscadores'];
