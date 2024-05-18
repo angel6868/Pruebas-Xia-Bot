@@ -18,6 +18,5 @@ let handler = async (m, { conn, text }) => {
 
 handler.command = handler.help = ['bing'];
 handler.tags = ['ai'];
-handler.premium = true 
 
 export default handler;
