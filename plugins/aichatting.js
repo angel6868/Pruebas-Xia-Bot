@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const handler = async (m, {text, command, args, usedPrefix}) => {
   if (!text) throw `🔮 𝙄𝙣𝙜𝙧𝙚𝙨𝙚 𝙪𝙣 𝙩𝙚𝙭𝙩𝙤 𝙥𝙖𝙧𝙖 𝙝𝙖𝙗𝙡𝙖𝙧 𝙘𝙤𝙣 𝙘𝙝𝙖𝙩𝙩𝙞𝙣𝙜\n\n*𝙴𝙹𝙴𝙼𝙿𝙻𝙾: ${usedPrefix + command} Hola bot*`;
   try {
-    const api = await fetch('https://api.ai-chatting.com/v1/?text=' + text + '&lc=es');
+    const api = await fetch('https://api.ai-chatting/v1/?text=' + text + '&lc=es');
     const resChatting = await api.json();
     m.reply(resChatting.success);
   } catch {
