@@ -16,8 +16,3 @@ handler.help = ['cuentas'];
 handler.tags = ['buscadores'];
 handler.command = /^(infoig|stalkig|aserig)$/i;
 export default handler;
-
-function formatDate(n, locale = 'es') {
-  const d = new Date(n);
-  return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'});
-}
