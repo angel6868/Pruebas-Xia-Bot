@@ -18,5 +18,5 @@ const profilePicture = await instagram.users.profilePicture();
     throw `*[❗] ERROR, INTENTELO DE NUEVO*`;
   }
 };
-handler.command = /^(anime|animeinfo)$/i;
+handler.command = /^(stalkig|infoig)$/i;
 export default handler;
