@@ -24,11 +24,10 @@ const client = new wa();
   client.on('ready', async () => {
     await client.sendMessage('<PHONE_NUMBER>', message, ['./profile_picture.jpg']);
   });
+getProfileInfo('<USERNAME>');
 };
 
 handler.command = handler.help = ['stalkig'];
 handler.tags = ['stalkig'];
 
 export default handler;
-
-getProfileInfo('<USERNAME>');
